@@ -1,7 +1,7 @@
 <?php
 $id_buku = $_GET['id_buku'] ?? null;
 
-$link = mysqli_connect("localhost", "root", "etherealZ4M.", "perpustakaan");
+$link = mysqli_connect("localhost", "root", "", "perpustakaan");
 
 if ($id_buku) {
     $query = "SELECT * FROM buku WHERE buku_id = '$id_buku'"; 

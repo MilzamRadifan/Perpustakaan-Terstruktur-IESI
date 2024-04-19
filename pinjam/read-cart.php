@@ -1,7 +1,7 @@
 <?php
 function read()
 {
-    $link = new mysqli("localhost", "root", "etherealZ4M.", "perpustakaan");
+    $link = new mysqli("localhost", "root", "", "perpustakaan");
 
     $query = "SELECT buku_id, judul from cart natural join buku;";
     $result = mysqli_query($link, $query);

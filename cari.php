@@ -13,7 +13,7 @@
 function cari($keyword)
 {
     $link = mysqli_connect(
-        "localhost", "root", "etherealZ4M.", "perpustakaan");
+        "localhost", "root", "", "perpustakaan");
     $query =
         "SELECT buku_id, judul FROM buku WHERE judul LIKE '%$keyword%'";
         $result = mysqli_query( $link, $query );
