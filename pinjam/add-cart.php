@@ -1,11 +1,9 @@
 <?php
 function add($idbuku, $judul)
 {
-    $cookie_name = "cart";
-    $cart = json_decode($_COOKIE[$cookie_name], true);
-    $buku[]=$idbuku;
-    $buku[]=$judul;
-    $cart[]=$buku;
-    setcookie($cookie_name, json_encode($cart));
+    $link = new mysqli("localhost", "root", "etherealZ4M.", "perpustakaan");
+    $query = "INSERT INTO cart (buku_id) VALUES ('$idbuku')";
+    mysqli_query($link, $query);
+    mysqli_close($link);
 }
 ?>

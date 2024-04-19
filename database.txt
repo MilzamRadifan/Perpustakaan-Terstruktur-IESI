@@ -1,0 +1,39 @@
+create schema perpustakaan;
+drop schema perpustakaan;
+use perpustakaan;
+
+CREATE TABLE IF NOT EXISTS cart (
+    buku_id int not null
+);
+
+CREATE TABLE IF NOT EXISTS buku (
+    buku_id INT NOT NULL AUTO_INCREMENT primary key ,
+    judul VARCHAR(100) NULL,
+    sinopsis varchar(1000) not null ,
+    penulis varchar(100) not null ,
+    penerbit varchar(100) not null ,
+    tahunTerbit date not null ,
+    jumlahHalaman int not null ,
+    bahasa varchar(100) not null ,
+    genre varchar(50)
+);
+
+CREATE TABLE IF NOT EXISTS peminjaman (
+    peminjaman_id INT NOT NULL auto_increment primary key ,
+    buku_id INT,
+    tanggal date,
+    hari INT(2) not null ,
+    foreign key (buku_id) references buku(buku_id)
+);
+
+INSERT INTO buku (judul, sinopsis, penulis, penerbit, tahunTerbit, jumlahHalaman, bahasa, genre) VALUES
+('Harry Potter and the Philosopher\'s Stone', 'Harry Potter is a series of fantasy novels written by British author J.K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.', 'J.K. Rowling', 'Bloomsbury Publishing', '1997-06-26', 223, 'English', 'Fantasy'),
+('The Lord of the Rings', 'The Lord of the Rings is an epic high-fantasy novel written by English author J.R.R. Tolkien. The story began as a sequel to Tolkien\'s 1937 fantasy novel The Hobbit, but eventually developed into a much larger work.', 'J.R.R. Tolkien', 'George Allen & Unwin', '1954-07-29', 1178, 'English', 'Fantasy'),
+('To Kill a Mockingbird', 'To Kill a Mockingbird is a novel by Harper Lee published in 1960. It is a Southern Gothic novel and a Bildungsroman. The novel is renowned for its warmth and humor, despite dealing with serious issues such as racial inequality and rape.', 'Harper Lee', 'J. B. Lippincott & Co.', '1960-07-11', 281, 'English', 'Southern Gothic'),
+('1984', 'Nineteen Eighty-Four, often referred to as 1984, is a dystopian social science fiction novel by the English novelist George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell\'s ninth and final book completed in his lifetime.', 'George Orwell', 'Secker & Warburg', '1949-06-08', 328, 'English', 'Dystopian'),
+('The Great Gatsby', 'The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway\'s interactions with mysterious millionaire Jay Gatsby and Gatsby\'s obsession to reunite with his former lover, Daisy Buchanan.', 'F. Scott Fitzgerald', 'Charles Scribner\'s Sons', '1925-04-10', 218, 'English', 'Literary Fiction'),
+('Pride and Prejudice', 'Pride and Prejudice is a romantic novel of manners written by Jane Austen in 1813. The novel follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.', 'Jane Austen', 'T. Egerton, Whitehall', '1813-01-28', 279, 'English', 'Romance'),
+('The Catcher in the Rye', 'The Catcher in the Rye is a novel by J. D. Salinger, first published in 1951. It has been translated into almost all of the world\'s major languages. Around 1 million copies are sold each year, with total sales of more than 65 million books.', 'J.D. Salinger', 'Little, Brown and Company', '1951-07-16', 277, 'English', 'Coming-of-age'),
+('Animal Farm', 'Animal Farm is an allegorical novella by George Orwell, first published in England on 17 August 1945. The book tells the story of a group of farm animals who rebel against their human farmer, hoping to create a society where the animals can be equal, free, and happy.', 'George Orwell', 'Secker and Warburg', '1945-08-17', 112, 'English', 'Political Satire'),
+('Brave New World', 'Brave New World is a dystopian social science fiction novel by English author Aldous Huxley, written in 1931 and published in 1932. Largely set in a futuristic World State, whose citizens are environmentally engineered into an intelligence-based social hierarchy.', 'Aldous Huxley', 'Chatto & Windus', '1932-10-27', 311, 'English', 'Dystopian'),
+('The Hobbit', 'The Hobbit, or There and Back Again is a children\'s fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction.', 'J.R.R. Tolkien', 'George Allen & Unwin', '1937-09-21', 310, 'English', 'Fantasy');
