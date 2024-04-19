@@ -1,5 +1,5 @@
 create schema perpustakaan;
-drop schema perpustakaan;
+
 use perpustakaan;
 
 CREATE TABLE IF NOT EXISTS cart (
