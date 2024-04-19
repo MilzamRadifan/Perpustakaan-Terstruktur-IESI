@@ -26,5 +26,4 @@ switch ($fitur) {
         read();
         break;
 }
-
 ?>

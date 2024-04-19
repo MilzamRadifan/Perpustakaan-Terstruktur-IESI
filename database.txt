@@ -3,7 +3,8 @@ create schema perpustakaan;
 use perpustakaan;
 
 CREATE TABLE IF NOT EXISTS cart (
-    buku_id int not null
+    buku_id int not null,
+    foreign key (buku_id) references buku(buku_id)
 );
 
 CREATE TABLE IF NOT EXISTS buku (
@@ -22,7 +23,7 @@ CREATE TABLE IF NOT EXISTS peminjaman (
     peminjaman_id INT NOT NULL auto_increment primary key ,
     buku_id INT,
     tanggal date,
-    hari INT(2) not null ,
+    lamaPinjam INT(2) not null ,
     foreign key (buku_id) references buku(buku_id)
 );
 

@@ -25,5 +25,4 @@ if ($id_buku) {
 }
 
 mysqli_close($link);
-
 ?>

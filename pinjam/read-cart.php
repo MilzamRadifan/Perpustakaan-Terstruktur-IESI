@@ -1,7 +1,6 @@
 <?php
 function read()
 {
-
     $link = new mysqli("localhost", "root", "etherealZ4M.", "perpustakaan");
 
     $query = "SELECT buku_id, judul from cart natural join buku;";
@@ -42,7 +41,5 @@ function read()
         $i++;
     }
     mysqli_close($link);
-
-
 }
 ?>
