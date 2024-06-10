@@ -23,7 +23,7 @@ function read()
         }
         echo "</table>";
         echo "<a href='../fitur.php'>CARI</a> <br>";
-        echo "<input type='submit' value='SIMPAN'></form>"; 
+        echo "<input type='submit' value='PINJAM'></form>"; 
     } else {
         echo "cart kosong";
     }
