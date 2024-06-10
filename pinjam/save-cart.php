@@ -1,7 +1,7 @@
 <?php
 function save()
 {
-    $link = new mysqli("localhost", "root", "", "perpustakaan");
+    $link = new mysqli("localhost", "root", "etherealZ4M.", "perpustakaan");
 
     $hari = $_POST['hari'];
     $buku_id = $_POST['buku_id'];
