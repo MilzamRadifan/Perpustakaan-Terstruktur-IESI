@@ -33,8 +33,22 @@ function display($listbuku) {
         foreach ($listbuku as $row) {
             echo "<tr>
                 <td style='text-align: center;'>$row[0]</td><td> $row[1] </td>
-                <td style='text-align: center;'><a href='./pinjam/pinjam.php?fitur=add&idbuku=$row[0]&judul=$row[1]'>pinjam</td>
-                <td style='text-align: center;'><a href='./detail.php?id_buku=$row[0]'>detail</td>
+                <td style='text-align: center;'>
+                    <form method='get'>
+                        <input type='hidden' name='fitur' value='add'>
+                        <input type='hidden' name='idbuku' value='$row[0]'>
+                        <input type='hidden' name='judul' value='$row[1]'>
+                        <button type='submit' >Add to cart</button>
+                    </form>
+                </td>
+
+                <td style='text-align: center;'>
+                    <form method='get'>
+                        <input type='hidden' name='fitur' value='detail'>
+                        <input type='hidden' name='idbuku' value='$row[0]'>
+                        <button type='submit' >Detail</button>
+                    </form>
+                </td>
             </tr>";
         }
         echo "</table>";
@@ -43,8 +57,12 @@ function display($listbuku) {
 ?>
 
 <form method="get">
-    <input type="text" name="keyword"/>
-    <input type="submit" value="CARI"/>
+    <input type="text" name="fitur"/>
+    <input type="submit" value="cari"/>
 </form>
-<a href='./pinjam/pinjam.php?fitur=read'>Lihat Keranjang</a>
+
+<form method="get">
+    <input type="hidden" name="fitur" value="read"/>
+    <button type='submit' >Lihat Keranjang</button>
+</form>
 <br>

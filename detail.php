@@ -1,5 +1,5 @@
 <?php
-$id_buku = $_GET['id_buku'] ?? null;
+$id_buku = $_GET['idbuku'] ?? null;
 
 $link = mysqli_connect("localhost", "root", "etherealZ4M.", "perpustakaan");
 
